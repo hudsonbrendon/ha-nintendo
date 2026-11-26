@@ -1,0 +1,157 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Nintendo Account",
+        "description": "1. Open [this link]({url}) and sign in to your Nintendo Account. If Nintendo asks, enter the code sent to your e-mail.\n2. On the \"Link an account\" screen, right-click **Use this account** and copy the link address.\n3. Paste the link below (it starts with `npf54789befb391a838://auth#...`).",
+        "data": {
+          "link": "\"Use this account\" link"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to Nintendo Account",
+        "description": "1. Open [this link]({url}) and sign in to your Nintendo Account. If Nintendo asks, enter the code sent to your e-mail.\n2. On the \"Link an account\" screen, right-click **Use this account** and copy the link address.\n3. Paste the link below (it starts with `npf54789befb391a838://auth#...`).",
+        "data": {
+          "link": "\"Use this account\" link"
+        }
+      }
+    },
+    "error": {
+      "invalid_link": "Invalid link: copy the full button link.",
+      "invalid_auth": "Nintendo rejected the sign-in. Use the new link (each one works once) and try again.",
+      "cannot_connect": "Could not reach Nintendo."
+    },
+    "abort": {
+      "already_configured": "This Nintendo Account is already configured.",
+      "reauth_successful": "Sign-in renewed.",
+      "wrong_account": "Use the same Nintendo Account as before."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "jogando": {
+        "name": "Playing"
+      }
+    },
+    "button": {
+      "tempo_extra_15": {
+        "name": "Extra time +15 min"
+      },
+      "tempo_extra_30": {
+        "name": "Extra time +30 min"
+      },
+      "tempo_extra_60": {
+        "name": "Extra time +1 h"
+      },
+      "tempo_ilimitado_hoje": {
+        "name": "Unlimited time today"
+      },
+      "cancelar_tempo_extra": {
+        "name": "Cancel extra time"
+      },
+      "gerar_codigo_registro": {
+        "name": "Generate registration code"
+      }
+    },
+    "number": {
+      "limite_diario": {
+        "name": "Daily limit"
+      }
+    },
+    "select": {
+      "nivel_restricao": {
+        "name": "Restriction level",
+        "state": {
+          "none": "None",
+          "children": "Young child",
+          "young_teens": "Child",
+          "older_teens": "Teen",
+          "custom": "Custom"
+        }
+      },
+      "modo_timer": {
+        "name": "Timer mode",
+        "state": {
+          "daily": "Same every day",
+          "each_day_of_the_week": "Per day of the week"
+        }
+      }
+    },
+    "sensor": {
+      "tempo_jogo_hoje": {
+        "name": "Play time today"
+      },
+      "tempo_jogo_ontem": {
+        "name": "Play time yesterday"
+      },
+      "tempo_jogo_7_dias": {
+        "name": "Play time 7 days"
+      },
+      "tempo_jogo_30_dias": {
+        "name": "Play time 30 days"
+      },
+      "tempo_jogo_mes": {
+        "name": "Play time last month"
+      },
+      "ultimo_jogo": {
+        "name": "Last game"
+      },
+      "jogos_hoje": {
+        "name": "Games today"
+      },
+      "limite_hoje": {
+        "name": "Limit today"
+      },
+      "tempo_restante": {
+        "name": "Time remaining"
+      },
+      "hora_de_dormir_hoje": {
+        "name": "Bedtime today"
+      },
+      "status_sincronizacao": {
+        "name": "Synchronization",
+        "state": {
+          "synchronized": "Synchronized",
+          "not_synchronized": "Not synchronized",
+          "pending": "Pending"
+        }
+      },
+      "ultima_atualizacao": {
+        "name": "Last update"
+      },
+      "regiao": {
+        "name": "Region"
+      },
+      "consoles": {
+        "name": "Consoles"
+      },
+      "codigo_registro": {
+        "name": "Registration code"
+      }
+    },
+    "switch": {
+      "suspender_software": {
+        "name": "Suspend software at limit"
+      },
+      "hora_de_dormir_ativa": {
+        "name": "Bedtime"
+      }
+    },
+    "text": {
+      "pin": {
+        "name": "Parental controls PIN"
+      },
+      "nome": {
+        "name": "Console name"
+      }
+    },
+    "time": {
+      "hora_de_dormir": {
+        "name": "Bedtime alarm"
+      },
+      "fim_hora_de_dormir": {
+        "name": "Bedtime end"
+      }
+    }
+  }
+}

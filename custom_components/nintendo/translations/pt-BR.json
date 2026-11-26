@@ -1,0 +1,157 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Entrar na conta Nintendo",
+        "description": "1. Abra [este link]({url}) e entre na sua conta Nintendo (e-mail e senha). Se a Nintendo pedir, digite o código que chegou no seu e-mail.\n2. Na tela \"Vincular uma conta\", clique com o botão direito em **Usar esta conta** e copie o endereço do link.\n3. Cole abaixo o link (começa com `npf54789befb391a838://auth#...`).",
+        "data": {
+          "link": "Link do botão \"Usar esta conta\""
+        }
+      },
+      "reauth_confirm": {
+        "title": "Entrar na conta Nintendo",
+        "description": "1. Abra [este link]({url}) e entre na sua conta Nintendo (e-mail e senha). Se a Nintendo pedir, digite o código que chegou no seu e-mail.\n2. Na tela \"Vincular uma conta\", clique com o botão direito em **Usar esta conta** e copie o endereço do link.\n3. Cole abaixo o link (começa com `npf54789befb391a838://auth#...`).",
+        "data": {
+          "link": "Link do botão \"Usar esta conta\""
+        }
+      }
+    },
+    "error": {
+      "invalid_link": "Link inválido: copie o endereço completo do botão.",
+      "invalid_auth": "A Nintendo recusou o login. Gere um novo link (o anterior só vale uma vez) e tente de novo.",
+      "cannot_connect": "Não foi possível falar com a Nintendo."
+    },
+    "abort": {
+      "already_configured": "Essa conta Nintendo já está configurada.",
+      "reauth_successful": "Login renovado.",
+      "wrong_account": "Use a mesma conta Nintendo da configuração original."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "jogando": {
+        "name": "Jogando"
+      }
+    },
+    "button": {
+      "tempo_extra_15": {
+        "name": "Tempo extra +15 min"
+      },
+      "tempo_extra_30": {
+        "name": "Tempo extra +30 min"
+      },
+      "tempo_extra_60": {
+        "name": "Tempo extra +1 h"
+      },
+      "tempo_ilimitado_hoje": {
+        "name": "Tempo ilimitado hoje"
+      },
+      "cancelar_tempo_extra": {
+        "name": "Cancelar tempo extra"
+      },
+      "gerar_codigo_registro": {
+        "name": "Gerar código de registro"
+      }
+    },
+    "number": {
+      "limite_diario": {
+        "name": "Limite diário"
+      }
+    },
+    "select": {
+      "nivel_restricao": {
+        "name": "Nível de restrição",
+        "state": {
+          "none": "Sem restrição",
+          "children": "Criança",
+          "young_teens": "Pré-adolescente",
+          "older_teens": "Adolescente",
+          "custom": "Personalizado"
+        }
+      },
+      "modo_timer": {
+        "name": "Modo do limite",
+        "state": {
+          "daily": "Todos os dias iguais",
+          "each_day_of_the_week": "Por dia da semana"
+        }
+      }
+    },
+    "sensor": {
+      "tempo_jogo_hoje": {
+        "name": "Tempo de jogo hoje"
+      },
+      "tempo_jogo_ontem": {
+        "name": "Tempo de jogo ontem"
+      },
+      "tempo_jogo_7_dias": {
+        "name": "Tempo de jogo 7 dias"
+      },
+      "tempo_jogo_30_dias": {
+        "name": "Tempo de jogo 30 dias"
+      },
+      "tempo_jogo_mes": {
+        "name": "Tempo de jogo último mês"
+      },
+      "ultimo_jogo": {
+        "name": "Último jogo"
+      },
+      "jogos_hoje": {
+        "name": "Jogos hoje"
+      },
+      "limite_hoje": {
+        "name": "Limite hoje"
+      },
+      "tempo_restante": {
+        "name": "Tempo restante"
+      },
+      "hora_de_dormir_hoje": {
+        "name": "Hora de dormir hoje"
+      },
+      "status_sincronizacao": {
+        "name": "Sincronização",
+        "state": {
+          "synchronized": "Sincronizado",
+          "not_synchronized": "Não sincronizado",
+          "pending": "Pendente"
+        }
+      },
+      "ultima_atualizacao": {
+        "name": "Última atualização"
+      },
+      "regiao": {
+        "name": "Região"
+      },
+      "consoles": {
+        "name": "Consoles"
+      },
+      "codigo_registro": {
+        "name": "Código de registro"
+      }
+    },
+    "switch": {
+      "suspender_software": {
+        "name": "Suspender jogo no limite"
+      },
+      "hora_de_dormir_ativa": {
+        "name": "Hora de dormir"
+      }
+    },
+    "text": {
+      "pin": {
+        "name": "PIN do controle parental"
+      },
+      "nome": {
+        "name": "Nome do console"
+      }
+    },
+    "time": {
+      "hora_de_dormir": {
+        "name": "Alarme da hora de dormir"
+      },
+      "fim_hora_de_dormir": {
+        "name": "Fim da hora de dormir"
+      }
+    }
+  }
+}
