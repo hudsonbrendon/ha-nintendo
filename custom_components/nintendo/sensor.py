@@ -51,6 +51,14 @@ def _extra(d: dict[str, Any]) -> int:
     )
 
 
+def _bedtime(d: dict[str, Any]) -> str | None:
+    bed = logic.regulation_today(d["setting"], _today()).get("bedtime") or {}
+    end = bed.get("endingTime")
+    return (
+        f"{end['hour']:02d}:{end['minute']:02d}" if bed.get("enabled") and end else None
+    )
+
+
 def _infinite(d: dict[str, Any]) -> bool:
     extra = d["owned"].get("device", {}).get("extraPlayingTime") or {}
     return bool(isinstance(extra, dict) and extra.get("inOneDay", {}).get("isInfinity"))
@@ -121,20 +129,18 @@ DEVICE_SENSORS: tuple[DevSensor, ...] = (
     DevSensor(
         key="tempo_restante",
         **MIN,
-        value=lambda d, t: None
-        if _infinite(d)
-        else logic.remaining_minutes(d["setting"], _day(d), _today(), _extra(d)),
+        value=lambda d, t: (
+            None
+            if _infinite(d)
+            else logic.remaining_minutes(d["setting"], _day(d), _today(), _extra(d))
+        ),
         attrs=lambda d, t: {
             "tempo_extra": d["owned"].get("device", {}).get("extraPlayingTime")
         },
     ),
     DevSensor(
         key="hora_de_dormir_hoje",
-        value=lambda d, t: (
-            lambda b: f"{b['endingTime']['hour']:02d}:{b['endingTime']['minute']:02d}"
-            if b.get("enabled") and b.get("endingTime")
-            else None
-        )(logic.regulation_today(d["setting"], _today()).get("bedtime") or {}),
+        value=lambda d, t: _bedtime(d),
     ),
     DevSensor(
         key="status_sincronizacao",
@@ -142,17 +148,18 @@ DEVICE_SENSORS: tuple[DevSensor, ...] = (
         device_class=SensorDeviceClass.ENUM,
         options=["synchronized", "not_synchronized", "pending"],
         value=lambda d, t: (
-            d["owned"].get("parentalControlSettingStatus") or ""
-        ).lower()
-        or None,
+            (d["owned"].get("parentalControlSettingStatus") or "").lower() or None
+        ),
     ),
     DevSensor(
         key="ultima_atualizacao",
         entity_category=EntityCategory.DIAGNOSTIC,
         device_class=SensorDeviceClass.TIMESTAMP,
-        value=lambda d, t: datetime.fromtimestamp(d["daily"]["lastUpdatedAt"], UTC)
-        if d["daily"].get("lastUpdatedAt")
-        else None,
+        value=lambda d, t: (
+            datetime.fromtimestamp(d["daily"]["lastUpdatedAt"], UTC)
+            if d["daily"].get("lastUpdatedAt")
+            else None
+        ),
     ),
     DevSensor(
         key="regiao",
